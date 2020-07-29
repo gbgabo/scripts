@@ -26,25 +26,6 @@ get_brightness()
 
 brightness=$(get_brightness)
 
-print_slider()
-{
-  # notify-send "brghtnss: "$1% -t 1500
-  local current_step=0
-  local on_steps=$(bc <<< "scale=0; $1/5")
-  local slider="["
-  while [ $current_step -lt 21 ]; do
-    if [ $current_step -lt $(( $on_steps + 1 )) ]; then
-      slider+="#"
-    else
-      slider+="-"
-    fi
-    current_step=$(( $current_step + 1 ))
-  done 
-  slider+="]"
-  echo $slider
-  notify-send --hint=string:x-dunst-stack-tag:brghtnss "    brghtnss: $1%" "$slider" -t 1500
-}
-
 set_brightness()
 {
   if [[ $1 =~ ^[0-9]+\+$ ]]; then
@@ -63,7 +44,8 @@ set_brightness()
     brightness=100
   fi
   xrandr --output "$connected_output" --brightness "$raw_brightness"
-  print_slider $brightness
+  bar=$(tprogbar -v $brightness)
+  notify-send --hint=string:x-dunst-stack-tag:brghtnss "Brghtnss $bar" -t 1500
   echo "$brightness" > /tmp/brghtnss.dat
 }
 
