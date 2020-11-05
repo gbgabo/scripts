@@ -45,7 +45,8 @@ set_brightness()
   fi
   xrandr --output "$connected_output" --brightness "$raw_brightness"
   bar=$(tprogbar -v $brightness)
-  notify-send --hint=string:x-dunst-stack-tag:brghtnss "Brghtnss $bar" -t 1500
+  # notify-send --hint=string:x-dunst-stack-tag:brghtnss "Brghtnss $bar" -t 1500
+  xsetroot -name "  $bar"
   echo "$brightness" > /tmp/brghtnss.dat
 }
 
@@ -56,5 +57,3 @@ do
         h) usage ;;
     esac
 done
-
-
