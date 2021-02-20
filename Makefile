@@ -26,15 +26,20 @@ passmenu: ${BIN_FOLDER}
 	install -m 555 passmenu ${BIN_FOLDER}
 	@echo "done!"
 
+tset: ${BIN_FOLDER}
+	@echo "Installing tset..."
+	install -m 555 tset ${BIN_FOLDER}
+	@echo "done!"
+
 uninstall:
 	@echo "Removing scripts..."
 	rm -f ${BIN_FOLDER}/passmenu
 	rm -f ${BIN_FOLDER}/bctrl
 	rm -f ${BIN_FOLDER}/vctrl
-
+	rm -f ${BIN_FOLDER}/tset
 	@echo "done!"
 
-install: passmenu bctrl vctrl
+install: passmenu bctrl vctrl tset
 	@echo "scripts installed!"
 
-.PHONY: install passmenu bctrl vctrl uninstall
+.PHONY: install passmenu bctrl vctrl tset uninstall

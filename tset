@@ -1,0 +1,40 @@
+#!/bin/bash
+input=$3
+
+get_value(){
+    file=$1
+    if [ -f "/tmp/$file.dat" ]; then
+        echo $(cat "/tmp/$file.dat")
+    else
+        touch /tmp/$file.dat
+        echo 100
+    fi
+}
+
+set_value(){
+    file=$1
+    value=$(get_value $file)
+    if [[ $input =~ ^[0-9]+\+$ ]]; then
+        number=${input/+/" "}
+        value=$(bc <<< "$value+$number")
+    elif [[ $input =~ ^[0-9]+\-$ ]]; then
+        number=${input/-/" "} 
+        value=$(bc <<< "$value-$number") 
+    elif [[ $input =~ ^[0-9]+$ ]]; then
+        value=$input
+    fi
+    if (( "$value" > 100 )); then 
+        value=100
+    fi
+    echo "$value" > /tmp/$file.dat
+
+}
+
+while getopts s:g: option 
+do
+    case "${option}" in
+        s) set_value ${OPTARG};;
+        g) echo "$(get_value ${OPTARG})";;
+    esac
+done
+
