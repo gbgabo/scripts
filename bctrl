@@ -9,5 +9,5 @@ raw_brightness=$(bc <<< "scale=2; $brightness/100")
 xrandr --output "$connected_output" --brightness "$raw_brightness"
 
 bar=$(tprogbar -v $brightness)
-# notify-send --hint=string:x-dunst-stack-tag:brghtnss "Brghtnss $bar" -t 1500
-xsetroot -name "  $bar"
+dunstify -r 5555 " $bar"
+# xsetroot -name "  $bar"
