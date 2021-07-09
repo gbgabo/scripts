@@ -4,19 +4,19 @@
 .POSIX:
 
 BIN_FOLDER=/usr/bin
-CONFIG_FOLDER=/etc/tinytools
+CONFIG_FOLDER=/etc/personal-scripts
 
 
 ${BIN_FOLDER}:
 	@echo "Creating ${BIN_FOLDER} folder ..."
 	mkdir ${BIN_FOLDER}
 
-bctrl: ${BIN_FOLDER}
+bctrl: ${BIN_FOLDER} tset
 	@echo "Installing bctrl..."
 	install -m 555 bctrl ${BIN_FOLDER}
 	@echo "done!"
 
-vctrl: ${BIN_FOLDER}
+vctrl: ${BIN_FOLDER} tset
 	@echo "Installing vctrl..."
 	install -m 555 vctrl ${BIN_FOLDER}
 	@echo "done!"
@@ -31,15 +31,21 @@ tset: ${BIN_FOLDER}
 	install -m 555 tset ${BIN_FOLDER}
 	@echo "done!"
 
+tl: ${BIN_FOLDER}
+	@echo "Installing tl..."
+	install -m 555 tl ${BIN_FOLDER}
+	@echo "done!"
+
 uninstall:
 	@echo "Removing scripts..."
 	rm -f ${BIN_FOLDER}/passmenu
 	rm -f ${BIN_FOLDER}/bctrl
 	rm -f ${BIN_FOLDER}/vctrl
 	rm -f ${BIN_FOLDER}/tset
+	rm -f ${BIN_FOLDER}/tl
 	@echo "done!"
 
-install: passmenu bctrl vctrl tset
+install: passmenu bctrl vctrl tset tl
 	@echo "scripts installed!"
 
-.PHONY: install passmenu bctrl vctrl tset uninstall
+.PHONY: install passmenu bctrl vctrl tset tl uninstall
