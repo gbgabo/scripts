@@ -15,7 +15,7 @@ Some bash scripts to solve my personal needs, maybe you find something useful fo
 
 </div>
 
-## Scripts included
+## 🛠️ Scripts included
 
 ### `bctrl`
 
@@ -124,6 +124,35 @@ tl 'sudo apt update; apt list --upgradable'
 
 ---
 
+## ⚙️ Installation
+
+Edit Makefile to match where to install the script collection (installed into the /usr/bin namespace by default).
+
+Afterwards, enter the following command to install the **script collection** (if necessary as root):
+
+```sh
+make install
+```
+
+Or if you want to install an specific tool, you can run:
+
+```sh
+make tl # if you want to install tl for example
+```
+
+To uninstall **all scripts** you can run:
+
+```sh
+make uninstall
+```
+
 ### Todo
 
 - implement media control
+
+## ↗️ Other repositories to check
+
+- [gbgabo/dotfiles](https://github.com/gbgabo/dotfiles): current dotfiles used in my system;
+- [TinyTools](https://github.com/TinyToolSH): other cool scripts I write and use;
+- [gbgabo/dwm](https://github.com/gbgabo/dwm): own fork of dwm, including many useful patches and own color theme;
+- [gbgabo/dmenu](https://github.com/gbgabo/dmenu): dmenu fork with center patch and own color theme;
