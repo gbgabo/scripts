@@ -21,7 +21,7 @@ Some bash scripts to solve my personal needs, maybe you find something useful fo
 
 `brightness control`
 
-- xrandr wrapper to handle volume
+- xrandr wrapper to handle brightness
 
 Usage:
 
@@ -111,6 +111,9 @@ Dependencies:
 ### `tl`
 
 `terminal launch`
+
+- Allows you to launch a command (or a series of it) in a new terminal window
+- Good for command calls to launch from keybinds
 
 Usage:
 
