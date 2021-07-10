@@ -113,7 +113,7 @@ Dependencies:
 `terminal launch`
 
 - Allows you to launch a command (or a series of it) in a new terminal window
-- Good for command calls to launch from keybinds
+- Good for keybinds! Use it to call specific commands in a new window
 
 Usage:
 
@@ -131,13 +131,13 @@ tl 'sudo apt update; apt list --upgradable'
 
 Edit Makefile to match where to install the script collection (installed into the /usr/bin namespace by default).
 
-Afterwards, enter the following command to install the **script collection** (if necessary as root):
+Afterwards, enter the following command to install **all the scripts** (if necessary as root):
 
 ```sh
 make install
 ```
 
-Or if you want to install an specific tool, you can run:
+Or if you want to install an **specific script**, you can run:
 
 ```sh
 make tl # if you want to install tl for example
