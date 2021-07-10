@@ -8,7 +8,7 @@ gabo's collection of personal
 ╚════██║██║     ██╔══██╗██║██╔═══╝    ██║   ╚════██║
 ███████║╚██████╗██║  ██║██║██║        ██║   ███████║
 ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝        ╚═╝   ╚══════╝
-used in GNU/Linux system
+used for GNU/Linux systems
 ```
 
 Some bash scripts to solve my personal needs, maybe you find something useful for you!
