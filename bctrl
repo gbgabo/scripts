@@ -8,6 +8,6 @@ brightness=$(varset -g brghtnss)
 raw_brightness=$(bc <<< "scale=2; $brightness/100")
 xrandr --output "$connected_output" --brightness "$raw_brightness"
 
-bar=$(tprogbar -v $brightness)
-dunstify -r 5555 " $bar"
+bar=$(tprogbar -v $brightness -p "█" -b "%s" -m " ")
+dunstify -r 5555 " $bar"
 # xsetroot -name "  $bar"

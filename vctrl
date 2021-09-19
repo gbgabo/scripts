@@ -5,6 +5,7 @@ volume=$(varset -g volume)
 
 amixer set Master "$volume%" >> /dev/null
 
-bar=$(tprogbar -v $volume)
-dunstify -r 5555 "墳$bar"
+bar="$(tprogbar -v $volume -p "█" -b "%s" -m " ")"
+# bar="$(echo -e "╔════════════════════╗\n$bar\n╚════════════════════╝")"
+dunstify -r 5555 "墳 $bar"
 # xsetroot -name "  $bar"
