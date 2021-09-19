@@ -55,9 +55,9 @@ Dependencies:
 
 ---
 
-### `tset`
+### `varset`
 
-`tiny setter`
+`variable setter`
 
 - Little script that handles global variables
 - Let's you set, increase and decrease a variable (good for keybinds)
@@ -65,7 +65,7 @@ Dependencies:
 
 Usage:
 
-`tset` can be used with the following options:
+`varset` can be used with the following options:
 
 - `-s` `<variable>` `<value|value+|value->`: set value for variable in exact percentage value (0 to 100), or by increasing/decreasing the current one;
 
@@ -76,19 +76,19 @@ Example:
 Set specific value:
 
 ```sh
-tset -s battery-progress 20
+varset -s battery-progress 20
 ```
 
 Increase in a specific amount:
 
 ```sh
-tset -s battery-progress 5+
+varset -s battery-progress 5+
 ```
 
 Get current value:
 
 ```sh
-tset -g battery-progress # 25
+varset -g battery-progress # 25
 ```
 
 - current `<variable>` value is stored on /etc/`<variable>`.dat

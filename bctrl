@@ -2,9 +2,9 @@
 
 connected_output=$(xrandr | grep " connected" | cut -f1 -d " ")
 
-tset -s brghtnss $1
+varset -s brghtnss $1
 
-brightness=$(tset -g brghtnss)
+brightness=$(varset -g brghtnss)
 raw_brightness=$(bc <<< "scale=2; $brightness/100")
 xrandr --output "$connected_output" --brightness "$raw_brightness"
 

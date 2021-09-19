@@ -11,12 +11,12 @@ ${BIN_FOLDER}:
 	@echo "Creating ${BIN_FOLDER} folder ..."
 	mkdir ${BIN_FOLDER}
 
-bctrl: ${BIN_FOLDER} tset
+bctrl: ${BIN_FOLDER} varset
 	@echo "Installing bctrl..."
 	install -m 555 bctrl ${BIN_FOLDER}
 	@echo "done!"
 
-vctrl: ${BIN_FOLDER} tset
+vctrl: ${BIN_FOLDER} varset
 	@echo "Installing vctrl..."
 	install -m 555 vctrl ${BIN_FOLDER}
 	@echo "done!"
@@ -26,9 +26,9 @@ passmenu: ${BIN_FOLDER}
 	install -m 555 passmenu ${BIN_FOLDER}
 	@echo "done!"
 
-tset: ${BIN_FOLDER}
-	@echo "Installing tset..."
-	install -m 555 tset ${BIN_FOLDER}
+varset: ${BIN_FOLDER}
+	@echo "Installing varset..."
+	install -m 555 varset ${BIN_FOLDER}
 	@echo "done!"
 
 tl: ${BIN_FOLDER}
@@ -41,11 +41,11 @@ uninstall:
 	rm -f ${BIN_FOLDER}/passmenu
 	rm -f ${BIN_FOLDER}/bctrl
 	rm -f ${BIN_FOLDER}/vctrl
-	rm -f ${BIN_FOLDER}/tset
+	rm -f ${BIN_FOLDER}/varset
 	rm -f ${BIN_FOLDER}/tl
 	@echo "done!"
 
-install: passmenu bctrl vctrl tset tl
+install: passmenu bctrl vctrl varset tl
 	@echo "scripts installed!"
 
-.PHONY: install passmenu bctrl vctrl tset tl uninstall
+.PHONY: install passmenu bctrl vctrl varset tl uninstall
